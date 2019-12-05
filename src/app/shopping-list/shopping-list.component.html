@@ -1,0 +1,27 @@
+    <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0">
+
+    <style>
+        .itemimage
+        {
+            height: 120px;
+            width: 100%;
+            border-radius: 15px;
+        }
+    </style>
+    
+    <div class="row">
+        <div class="col-md-9"></div>
+        <div class="col-md-3"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 form-group"
+            *ngFor="let row of shoppinglist">
+            <img src="https://api.myjson.com/bins/qzuzi{{row.image}}" class="itemimage">
+            <button class="btn btn-default">Add to Cart</button>
+        </div>
+    </div>
+    
+    

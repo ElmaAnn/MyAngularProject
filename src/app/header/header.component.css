@@ -1,0 +1,13 @@
+#left
+{
+    float: left;
+    color:goldenrod;
+    font-size:25px;
+}
+
+
+#right
+{
+    float: left;
+    padding-left:800px;
+}
