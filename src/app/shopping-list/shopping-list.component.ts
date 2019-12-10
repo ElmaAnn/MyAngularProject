@@ -14,6 +14,10 @@ export class ShoppingListComponent implements OnInit {
     this.getShoppingList();
   }
 
+  total:number;
+  name:string[];
+  items:any[]=[];
+  cart:any[]=[];
   shoppingList:any[]=[];
   getShoppingList()
   {
@@ -25,5 +29,19 @@ export class ShoppingListComponent implements OnInit {
     );
   }
 
+  addToCart()
+  {
+    this.total = 0;
+    this.name = [];
+		let cart = JSON.parse(localStorage.getItem('cart'));
+		for (var i = 0; i < cart.length; i++) {
+			let item = JSON.parse(cart[i]);
+			this.items.push({
+				id: item.id,
+				quantity: item.quantity
+			});
+			this.total += item.id.price * item.quantity;
+		}
+	}
 
 }
